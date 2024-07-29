@@ -25,10 +25,10 @@ async function getNewClient() {
   });
 
   await client.connect();
-  return client
+  return client;
 }
 
 export default {
   query,
-  getNewClient
+  getNewClient,
 };
