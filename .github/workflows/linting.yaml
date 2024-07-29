@@ -4,7 +4,7 @@ on: pull_request
 
 jobs:
   jest:
-    name: Jest Ubuntu
+    name: Prettier
     runs-on: ubuntu-latest
 
     steps:
@@ -20,4 +20,4 @@ jobs:
         run: npm ci
 
       - name: Tests
-        run: npm test
+        run: npm run lint:Prettier:check
