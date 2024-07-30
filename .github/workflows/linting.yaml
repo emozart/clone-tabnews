@@ -3,7 +3,7 @@ name: Automated Tests
 on: pull_request
 
 jobs:
-  jest:
+  prettier:
     name: Prettier
     runs-on: ubuntu-latest
 
@@ -21,3 +21,22 @@ jobs:
 
       - name: Tests
         run: npm run lint:Prettier:check
+
+  eslint:
+    name: ESLint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Node installation
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/hydrogen"
+
+      - name: CI
+        run: npm ci
+
+      - name: Tests
+        run: npm run lint:Eslint:check
